@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-hd.png';
+
+const navItems = [
+  { name: 'Beranda', href: '#' },
+  { name: 'Layanan', href: '#services' },
+  { name: 'Tentang', href: '#about' },
+  { name: 'Hubungi', href: 'https://wa.me/6285320136919' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-black shadow-lg border-b border-gray-900">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2">
+      <Image src={logo} alt="Mimio Logo" class="h-10 w-auto" />
+      <span class="font-display font-black text-xl tracking-tight text-white">MIMIO</span>
+    </a>
+
+    <nav class="hidden md:flex gap-8 items-center">
+      {navItems.map(item => (
+        <a 
+          href={item.href} 
+          class="font-medium text-sm text-gray-300 hover:text-[var(--color-primary-400)] hover:tracking-wide transition-all uppercase tracking-wider"
+          target={item.href.startsWith('http') ? '_blank' : '_self'}
+        >
+          {item.name}
+        </a>
+      ))}
+    </nav>
+
+    <a 
+      href="https://wa.me/6285320136919" 
+      class="bg-[var(--color-primary-400)] text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[var(--color-primary-500)] transition-all hover:scale-105 shadow-md hover:shadow-[var(--color-primary-200)]/20"
+      target="_blank"
+    >
+      Pesan Sekarang
+    </a>
+  </div>
+</header>

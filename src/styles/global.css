@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors - Yellow Scale */
+  --color-primary-50: #feffeb;
+  --color-primary-100: #fdfecc;
+  --color-primary-200: #fbfd90;
+  --color-primary-300: #f9fb5c;
+  --color-primary-400: #ffef00; /* Main Brand Color */
+  --color-primary-500: #eef00d;
+  --color-primary-600: #cbcd05;
+  --color-primary-700: #a2a407;
+  --color-primary-800: #85860e;
+  --color-primary-900: #717213;
+  --color-primary-950: #424204;
+
+  /* Neutrals */
+  --color-surface-50: #f9fafb;
+  --color-surface-100: #f3f4f6;
+  --color-surface-900: #111827;
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+/* Utilities */
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-700),
+      var(--color-primary-900)
+    );
+  }
+
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: var(--color-surface-900);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
+}

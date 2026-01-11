@@ -1,0 +1,58 @@
+---
+const services = [
+  {
+    title: 'M-Food',
+    description: 'Lapar? Pesan makanan favoritmu dari warung dan restoran lokal di Majalengka & Cikijing.',
+    icon: '🍔',
+    color: 'bg-red-100 text-red-600',
+    link: 'https://wa.me/6285320136919?text=Halo%20Mimio,%20saya%20mau%20pesan%20M-Food...'
+  },
+  {
+    title: 'M-Send',
+    description: 'Kirim barang, dokumen, atau paket kilat dalam kota? Aman dan cepat sampai tujuan.',
+    icon: '📦',
+    color: 'bg-green-100 text-green-600',
+    link: 'https://wa.me/6285320136919?text=Halo%20Mimio,%20saya%20mau%20pesan%20M-Send...'
+  },
+  {
+    title: 'M-Mart',
+    description: 'Belanja kebutuhan harian, sayur, atau obat tanpa harus keluar rumah. Kami belikan!',
+    icon: '🛒',
+    color: 'bg-blue-100 text-blue-600',
+    link: 'https://wa.me/6285320136919?text=Halo%20Mimio,%20saya%20mau%20pesan%20M-Mart...'
+  }
+];
+---
+
+<section id="services" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan untuk memudahkan aktivitas harianmu.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map(service => (
+        <div class="bg-white rounded-3xl p-8 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(247,248,48,0.15)] transition-all duration-300 border border-gray-100 hover:border-[var(--color-primary-300)] group cursor-default">
+          <div class={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+            {service.icon}
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-3 text-gray-900 group-hover:text-[var(--color-primary-900)] transition-colors">{service.title}</h3>
+          <p class="text-gray-500 mb-8 leading-relaxed text-[15px]">
+            {service.description}
+          </p>
+          <a 
+            href={service.link}
+            target="_blank"
+            class="inline-flex items-center text-gray-900 font-bold hover:text-[var(--color-primary-700)] transition-colors group-hover:translate-x-1 duration-300"
+          >
+            Pesan Sekarang 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+const features = [
+  {
+    title: 'Lokal & Terpercaya',
+    description: 'Hadir khusus untuk warga Majalengka dan Cikijing. Kami mengerti kebutuhanmu.',
+    icon: '🇮🇩'
+  },
+  {
+    title: 'Harga Bersahabat',
+    description: 'Tarif transparan dan terjangkau untuk semua kalangan. Tidak ada biaya tersembunyi.',
+    icon: '💰'
+  },
+  {
+    title: 'Respons Cepat',
+    description: 'Admin WhatsApp yang ramah dan driver yang siap sedia mengantar pesananmu.',
+    icon: '⚡'
+  }
+];
+---
+
+<section id="about" class="py-24 bg-white relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="bg-[var(--color-primary-400)] rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
+      <!-- Decorator circles -->
+      <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white blur-3xl opacity-20 rounded-full"></div>
+      <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-white blur-3xl opacity-20 rounded-full"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <div class="inline-block bg-black/10 backdrop-blur-sm text-black px-4 py-1.5 rounded-full text-sm font-bold mb-6 border border-black/5">
+            Tentang Kami
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-extrabold mb-6 text-black tracking-tight leading-tight">
+            Kenapa Pilih <br/> Mimio?
+          </h2>
+          <p class="text-lg text-black/80 mb-8 max-w-md font-medium leading-relaxed">
+             Mimio bukan sekadar aplikasi, tapi teman setia aktivitasmu. Kami hadir untuk memajukan UMKM lokal dan memudahkan hidup warga Majalengka.
+          </p>
+          <a href="https://wa.me/6285320136919" class="bg-black text-white px-8 py-3.5 rounded-full font-bold hover:bg-gray-900 transition-all hover:-translate-y-1 shadow-lg inline-flex items-center gap-2">
+            Cobain Sekarang
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+        
+        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {features.map(feature => (
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-white/50">
+              <div class="text-4xl mb-3 transform hover:scale-110 transition-transform duration-300 inline-block">{feature.icon}</div>
+              <h4 class="font-bold text-lg mb-2 text-gray-900">{feature.title}</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
