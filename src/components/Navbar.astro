@@ -31,10 +31,62 @@ const navItems = [
 
     <a 
       href="https://wa.me/6285320136919" 
-      class="bg-[var(--color-primary-400)] text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[var(--color-primary-500)] transition-all hover:scale-105 shadow-md hover:shadow-[var(--color-primary-200)]/20"
+      class="hidden md:inline-flex bg-[var(--color-primary-400)] text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[var(--color-primary-500)] transition-all hover:scale-105 shadow-md hover:shadow-[var(--color-primary-200)]/20"
       target="_blank"
     >
       Pesan Sekarang
     </a>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-[var(--color-primary-400)] p-2 focus:outline-none z-50 relative group">
+      <div class="w-6 h-0.5 bg-[var(--color-primary-400)] mb-1.5 transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-2 group-[.open]:bg-black"></div>
+      <div class="w-6 h-0.5 bg-[var(--color-primary-400)] mb-1.5 transition-all duration-300 group-[.open]:opacity-0"></div>
+      <div class="w-6 h-0.5 bg-[var(--color-primary-400)] transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-2 group-[.open]:bg-black"></div>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[var(--color-primary-400)] z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center">
+    <nav class="flex flex-col gap-8 text-center items-center">
+      {navItems.map(item => (
+        <a 
+          href={item.href} 
+          class="font-display font-bold text-3xl text-black hover:text-white transition-colors mobile-nav-link"
+        >
+          {item.name}
+        </a>
+      ))}
+      <a 
+        href="https://wa.me/6285320136919" 
+        class="mt-4 bg-black text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-800 transition-all hover:scale-105 shadow-md"
+        target="_blank"
+      >
+        Pesan Sekarang
+      </a>
+    </nav>
   </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      if (mobileMenu.classList.contains('translate-x-full')) {
+        mobileMenu.classList.remove('translate-x-full');
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+      }
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.add('translate-x-full');
+      });
+    });
+  }
+</script>

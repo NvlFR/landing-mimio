@@ -24,7 +24,7 @@ const services = [
 ];
 ---
 
-<section id="services" class="py-20 bg-gray-50">
+<section id="services" class="py-12 md:py-20 bg-white">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
@@ -32,19 +32,19 @@ const services = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map(service => (
-        <div class="bg-white rounded-3xl p-8 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(247,248,48,0.15)] transition-all duration-300 border border-gray-100 hover:border-[var(--color-primary-300)] group cursor-default">
-          <div class={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+      {services.map((service, index) => (
+        <div class={`bg-[var(--color-primary-400)] rounded-3xl p-8 shadow-[0_4px_20px_rgb(0,0,0,0.1)] hover:shadow-xl transition-all duration-300 border border-black/5 hover:border-black/20 group cursor-default animate-prepare delay-${index * 100 + 100}`}>
+          <div class={`w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
             {service.icon}
           </div>
-          <h3 class="font-display text-2xl font-bold mb-3 text-gray-900 group-hover:text-[var(--color-primary-900)] transition-colors">{service.title}</h3>
-          <p class="text-gray-500 mb-8 leading-relaxed text-[15px]">
+          <h3 class="font-display text-2xl font-bold mb-3 text-black group-hover:text-gray-900 transition-colors">{service.title}</h3>
+          <p class="text-black/80 mb-8 leading-relaxed text-[15px]">
             {service.description}
           </p>
           <a 
             href={service.link}
             target="_blank"
-            class="inline-flex items-center text-gray-900 font-bold hover:text-[var(--color-primary-700)] transition-colors group-hover:translate-x-1 duration-300"
+            class="inline-flex items-center text-black font-bold hover:text-gray-800 transition-colors group-hover:translate-x-1 duration-300"
           >
             Pesan Sekarang 
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
