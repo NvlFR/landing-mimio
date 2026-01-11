@@ -19,10 +19,81 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title}</title>
     <meta name="description" content={description} />
-		<title>{title}</title>
+    <meta name="keywords" content="ojek online majalengka, ojek online cikijing, pesan makanan majalengka, kurir majalengka, mimio, umkm majalengka, m-food, m-send, m-mart" />
+    <meta name="author" content="Mimio Official" />
+    <link rel="canonical" href={Astro.site} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.site} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.site} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/og-image.jpg" />
+
+    <!-- Geo Tags for Local SEO (Majalengka) -->
+    <meta name="geo.region" content="ID-JB" />
+    <meta name="geo.placename" content="Majalengka" />
+    <meta name="geo.position" content="-6.8365;108.2268" /> <!-- Coordinates for Majalengka -->
+    <meta name="ICBM" content="-6.8365, 108.2268" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Mimio",
+        "image": "https://mimio.id/og-image.jpg",
+        "@id": "https://mimio.id",
+        "url": "https://mimio.id",
+        "telephone": "+6285320136919",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Majalengka",
+          "addressRegion": "Jawa Barat",
+          "postalCode": "45411",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -6.8365,
+          "longitude": 108.2268
+        },
+        "description": "Layanan ojek online dan delivery lokal nomor 1 di Majalengka & Cikijing. Melayani pesan antar makanan (M-Food), kurir barang (M-Send), dan belanja (M-Mart).",
+        "priceRange": "Rp 5.000 - Rp 500.000",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "07:00",
+          "closes": "22:00"
+        },
+        "sameAs": [
+          "https://facebook.com/mimio.official",
+          "https://instagram.com/mimio_17",
+          "https://youtube.com/@mimio.official"
+        ]
+      }
+    </script>
 	</head>
 	<body>
 		<slot />
@@ -38,7 +109,7 @@ const {
         smoothWheel: true,
       });
 
-      function raf(time) {
+      function raf(time: number) {
         lenis.raf(time);
         requestAnimationFrame(raf);
       }

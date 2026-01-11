@@ -1,0 +1,89 @@
+---
+const testimonials = [
+  {
+    name: 'Teh Rini',
+    role: 'Ibu Rumah Tangga',
+    content: 'Alhamdulillah ada Mimio, beli sayur sama lauk jadi gampang banget gak perlu ke pasar panas-panasan. Miminnya ramah pisan!',
+    avatar: '👩',
+    rating: 5
+  },
+  {
+    name: 'Kang Asep',
+    role: 'Pemilik Warung Seblak',
+    content: 'M-Send ngebantu banget buat kirim pesanan seblak ke pelanggan yang jauh. Pengiriman cepet, makanan tetep anget.',
+    avatar: '👨',
+    rating: 5
+  },
+  {
+    name: 'Dinda',
+    role: 'Mahasiswi',
+    content: 'Suka banget sama M-Food! Pilihan makanannya banyak, drivernya sopan-sopan. Solusi banget pas lagi nugas males keluar.',
+    avatar: '👧',
+    rating: 5
+  },
+  {
+    name: 'Bu Haji Yeti',
+    role: 'Pedagang Baju',
+    content: 'Kiriman paket ke customer jadi aman pake Mimio. Ongkirnya juga bersahabat banget buat sesama UMKM. Maju terus Mimio!',
+    avatar: '🧕',
+    rating: 5
+  }
+];
+---
+
+<section id="testimonials" class="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16 md:mb-24 animate-prepare">
+      <h2 class="font-display text-3xl md:text-5xl font-extrabold text-black mb-6 tracking-tight">
+        Apa Kata Mereka
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Mereka yang udah ngerasain gampangnya hidup bareng Mimio.
+      </p>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+      <div class="flex gap-6 animate-marquee hover:pause py-4">
+        {[...testimonials, ...testimonials].map((item, index) => (
+          <div class="flex-shrink-0 w-[350px] md:w-[400px] bg-white p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-black/5 hover:border-[var(--color-primary-400)] transition-colors hover:-translate-y-1 duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-[var(--color-primary-100)] rounded-full flex items-center justify-center text-2xl shrink-0">
+                  {item.avatar}
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-black">{item.name}</h4>
+                  <p class="text-sm text-gray-500">{item.role}</p>
+                </div>
+                <div class="ml-auto flex gap-1 text-[var(--color-primary-500)] text-sm">
+                  {'★'.repeat(item.rating)}
+                </div>
+              </div>
+              <div class="relative">
+                <span class="absolute -top-2 -left-2 text-4xl text-[var(--color-primary-200)] font-serif leading-none">"</span>
+                <p class="text-gray-600 leading-relaxed italic relative z-10 pl-4">
+                  {item.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

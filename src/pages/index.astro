@@ -5,14 +5,18 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
 ---
 
-<Layout>
-  <Navbar />
-  <main>
-    <Hero />
-    <Services />
-    <About />
-  </main>
-  <Footer />
+<Layout title="Mimio - Apapun Keperluanmu, Mimioin Aja!">
+	<Navbar />
+	<main>
+		<Hero />
+		<Services />
+    <HowItWorks />
+    <Testimonials />
+		<About />
+	</main>
+	<Footer />
 </Layout>
