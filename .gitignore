@@ -23,5 +23,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 blueprint.md
-deploy_vps.sh
-mimio_nginx.conf
+
+# Deployment & Sensitive Configs
+*.sh
+*nginx*.conf
