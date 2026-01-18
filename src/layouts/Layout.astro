@@ -9,8 +9,8 @@ interface Props {
 }
 
 const { 
-  title = "Mimio - Apapun Keperluanmu, Mimioin Aja!",
-  description = "Layanan ojek online lokal Majalengka & Cikijing. Pesan M-Food, M-Send, M-Mart mudah via WhatsApp."
+  title = "Mimio - Jasa Antar Jemput & Ojek Online Majalengka (Cikijing)",
+  description = "Layanan jasa antar jemput, ojek online, dan kurir paket lokal terpercaya di Majalengka & Cikijing. Pesan M-Food, M-Send, M-Mart aman & cepat via WhatsApp."
 } = Astro.props;
 ---
 
@@ -26,7 +26,7 @@ const {
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="ojek online majalengka, ojek online cikijing, pesan makanan majalengka, kurir majalengka, mimio, umkm majalengka, m-food, m-send, m-mart" />
+    <meta name="keywords" content="jasa antar jemput, ojek online majalengka, ojek online cikijing, kurir paket majalengka, delivery makanan cikijing, mimio, m-ride, m-food, m-send, transportasi online majalengka" />
     <meta name="author" content="Mimio Official" />
     <link rel="canonical" href={Astro.site} />
 
@@ -55,11 +55,12 @@ const {
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Mimio",
-        "image": "https://mimio.id/og-image.jpg",
-        "@id": "https://mimio.id",
-        "url": "https://mimio.id",
+        "name": "Mimio - Jasa Antar Jemput Majalengka",
+        "image": "https://mimio.ftrhq.my.id/og-image.jpg",
+        "@id": "https://mimio.ftrhq.my.id",
+        "url": "https://mimio.ftrhq.my.id",
         "telephone": "+6285320136919",
+        "priceRange": "Rp 5.000 - Rp 100.000",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Majalengka",
@@ -72,8 +73,7 @@ const {
           "latitude": -6.8365,
           "longitude": 108.2268
         },
-        "description": "Layanan ojek online dan delivery lokal nomor 1 di Majalengka & Cikijing. Melayani pesan antar makanan (M-Food), kurir barang (M-Send), dan belanja (M-Mart).",
-        "priceRange": "Rp 5.000 - Rp 500.000",
+        "description": "Mimio menyediakan jasa antar jemput, ojek online, dan kurir paket terpercaya di Majalengka dan Cikijing. Layanan cepat untuk M-Food, M-Send, dan M-Mart.",
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
@@ -85,14 +85,41 @@ const {
             "Saturday",
             "Sunday"
           ],
-          "opens": "07:00",
-          "closes": "22:00"
+          "opens": "06:00",
+          "closes": "23:00"
         },
         "sameAs": [
           "https://facebook.com/mimio.official",
           "https://instagram.com/mimio_17",
           "https://youtube.com/@mimio.official"
-        ]
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Layanan Mimio",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M-Ride (Jasa Antar Jemput)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M-Food (Pesan Antar Makanan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "M-Send (Kurir Paket)"
+              }
+            }
+          ]
+        }
       }
     </script>
 	</head>
